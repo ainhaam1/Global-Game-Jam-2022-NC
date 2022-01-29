@@ -8,7 +8,7 @@ public class enemyStateMachine : StateMachine
     public EnemyIdle enemyIdle;
     [HideInInspector]
     public EnemyFollow enemyFollow;
-    public Transform playerRange;
+    public Transform player;
     public float agroRange;
     public Rigidbody2D rb;
     public float speed = 4f;
