@@ -27,7 +27,12 @@ public class PlayerMove : BaseState
         if (Mathf.Abs(_horizontalInput) < Mathf.Epsilon)
         {
             mSM.rb.velocity = new Vector2(0, 0);
-            stateMachine.changeState(((MovementSM)stateMachine).idleState);
+            stateMachine.changeState(mSM.idleState);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            stateMachine.changeState(mSM.attackState);
         }
     }
     public override void UpdatePhysics()

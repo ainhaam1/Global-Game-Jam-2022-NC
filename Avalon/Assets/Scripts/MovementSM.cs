@@ -8,13 +8,17 @@ public class MovementSM : StateMachine
     public PlayerIdle idleState;
     [HideInInspector]
     public PlayerMove movingState;
+    [HideInInspector]
+    public PlayerAttack attackState;
     public Rigidbody2D rb;
+    public Transform attackPoint;
     public float speed = 4f;
 
     private void Awake()
     {
         idleState = new PlayerIdle(this);
         movingState = new PlayerMove(this);
+        attackState = new PlayerAttack(this);
     }
     protected override BaseState getInitialState()
     {
