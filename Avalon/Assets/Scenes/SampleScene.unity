@@ -417,7 +417,7 @@ Transform:
   m_LocalScale: {x: 23.540625, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &446333586
 BoxCollider2D:
@@ -662,7 +662,7 @@ Transform:
   m_Children:
   - {fileID: 1812738933}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812738932
 GameObject:
