@@ -15,20 +15,28 @@ public class EnemyFollow : BaseState
     public override void Enter()
     {
         base.Enter();
-        
+        Debug.Log("Follow");
+        eSM.enemySprite.color = eSM.enemyColor;
+        eSM.canAttack = false;
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        //Get in the range
         if (!tooFar(eSM.agroRange / 4))
         {
             tooFarToPlayer = true;
-        }else if (tooClose(eSM.agroRange/4))
+        }
+        else if (tooClose(eSM.agroRange / 4))
         {
             tooCloseToPlayer = true;
         }
-
+        //if not too close and not too far and player cant attack yet
+        if (!tooCloseToPlayer && !tooFarToPlayer)
+        {
+            stateMachine.changeState(eSM.enemyAttack);
+        }
     }
 
     public override void UpdatePhysics()
@@ -37,12 +45,11 @@ public class EnemyFollow : BaseState
         if (tooFarToPlayer)
         {
             getInAttackRange();
-        }else if (tooCloseToPlayer)
+        }
+        else if (tooCloseToPlayer)
         {
             backUp();
         }
-
-        
     }
     bool tooFar(float dist)
     {
@@ -58,7 +65,7 @@ public class EnemyFollow : BaseState
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 tooFarToPlayer = false;
-                Debug.Log("Enemy is in attack range");
+                //Debug.Log("Enemy is in attack range");
             }
         }
         Debug.DrawLine(eSM.raycastEnemyStart.position, endPos, Color.red);
@@ -80,21 +87,22 @@ public class EnemyFollow : BaseState
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 tooCloseToPlayer = true;
-                Debug.Log("Enemy is Too Close");
+                //Debug.Log("Enemy is Too Close");
             }
         }
-        Debug.DrawLine(eSM.raycastEnemyEnd.position, endPos, Color.blue);
+        //Debug.DrawLine(eSM.raycastEnemyEnd.position, endPos, Color.blue);
 
         return val;
     }
 
     void getInAttackRange()
     {
-        eSM.transform.Translate(Vector3.left * eSM.speed * Time.fixedDeltaTime); 
+        eSM.transform.Translate(Vector3.left * eSM.speed * Time.fixedDeltaTime);
     }
 
     void backUp()
     {
         eSM.transform.Translate(Vector3.right * eSM.speed * Time.fixedDeltaTime / 2);
     }
+
 }

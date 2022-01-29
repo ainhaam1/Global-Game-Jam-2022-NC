@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 267923651}
   - component: {fileID: 267923650}
   - component: {fileID: 267923652}
+  - component: {fileID: 267923653}
   m_Layer: 6
   m_Name: EnemyBasic
   m_TagString: Enemy
@@ -456,13 +457,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e3bbb72304e1a48b26c34ab5da6e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySprite: {fileID: 267923648}
+  cooldown: {fileID: 267923653}
+  active: 1
+  attackCooldown: 3
+  attackTime: 1
+  enemyColor: {r: 0, g: 0, b: 0, a: 1}
   player: {fileID: 309076945}
   raycastEnemyStart: {fileID: 1200665892}
   raycastEnemyEnd: {fileID: 1668749850}
-  sawPlayer: 0
+  canAttack: 0
   agroRange: 0.5
   rb: {fileID: 267923651}
-  speed: 1
+  speed: 0.25
+--- !u!114 &267923653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267923647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591b4fe86486a0f4dbeb020f80190e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 267923652}
 --- !u!1 &309076944
 GameObject:
   m_ObjectHideFlags: 0
