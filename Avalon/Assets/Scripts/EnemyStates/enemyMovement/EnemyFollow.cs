@@ -19,14 +19,17 @@ public class EnemyFollow : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        if (canSeePlayer(eSM.agroRange))
+        {
+            Debug.Log("Can see Method is working");
+        }
     }
 
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        canSeePlayer(eSM.agroRange);
+        
     }
-
     bool canSeePlayer(float dist)
     {
         bool val = false;
@@ -47,4 +50,5 @@ public class EnemyFollow : BaseState
 
         return val;
     }
+
 }

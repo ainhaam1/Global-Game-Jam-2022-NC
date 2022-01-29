@@ -421,7 +421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 309076945}
   raycastEnemy: {fileID: 1200665892}
-  agroRange: 2.5
+  sawPlayer: 0
+  agroRange: 1
   rb: {fileID: 267923651}
   speed: 4
 --- !u!1 &309076944
