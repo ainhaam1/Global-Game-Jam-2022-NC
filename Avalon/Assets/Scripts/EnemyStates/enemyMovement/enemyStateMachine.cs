@@ -10,6 +10,8 @@ public class enemyStateMachine : StateMachine
     public EnemyFollow enemyFollow;
     [HideInInspector]
     public EnemyAttack enemyAttack;
+    [HideInInspector]
+    public EnemyHit enemyHit;
 
     public SpriteRenderer enemySprite;
     public enemyCooldown cooldown;
@@ -24,12 +26,14 @@ public class enemyStateMachine : StateMachine
     public float agroRange;
     public Rigidbody2D rb;
     public float speed = 4f;
+    public bool isHit;
 
     private void Awake()
     {
         enemyIdle = new EnemyIdle(this);
         enemyFollow = new EnemyFollow(this);
         enemyAttack = new EnemyAttack(this);
+        enemyHit = new EnemyHit(this);
     }
 
     protected override BaseState getInitialState()

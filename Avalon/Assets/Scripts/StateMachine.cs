@@ -21,7 +21,7 @@ public class StateMachine : MonoBehaviour
     {
         if (currentState != null)
         {
-            Debug.Log(currentState.name);
+            //Debug.Log(currentState.name);
             currentState.UpdateLogic();
         }
     }
@@ -47,5 +47,8 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
-    
+    public string returnState()
+    {
+        return currentState.name;
+    }
 }

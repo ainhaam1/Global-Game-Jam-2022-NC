@@ -9,11 +9,11 @@ public class enemyCooldown : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("Waiting");
         StartCoroutine(attack(enemy.attackTime));
     }
     private IEnumerator attack(float time)
     {
+        Debug.Log("attack state turned red");
         enemy.enemySprite.color = Color.red;
         yield return new WaitForSeconds(time);
         StartCoroutine(coolDown(enemy.attackCooldown));
@@ -24,6 +24,10 @@ public class enemyCooldown : MonoBehaviour
         enemy.enemySprite.color = Color.blue;
         yield return new WaitForSeconds(time);
         enemy.canAttack = false;
+        //if (enemy.isHit)
+        //{
+        //    enemy.changeState(enemy.enemyHit);
+        //}
         enemy.changeState(enemy.enemyFollow);
     }
 }
