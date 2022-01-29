@@ -13,18 +13,42 @@ public class EnemyFollow : BaseState
     public override void Enter()
     {
         base.Enter();
-        eSM.rb.velocity =  new Vector2(eSM.speed, 0);
+        
     }
 
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        if (canSeePlayer(eSM.agroRange))
+        {
+            Debug.Log("Can see Method is working");
+        }
     }
 
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        float distToPlayer = Vector2.Distance(eSM.transform.position, eSM.player.transform.position);
-        Debug.Log(distToPlayer);
+        
     }
+    bool canSeePlayer(float dist)
+    {
+        bool val = false;
+        var castDist = dist;
+
+        Vector2 endPos = eSM.raycastEnemy.position + Vector3.left * dist;
+
+        RaycastHit2D hit = Physics2D.Linecast(eSM.raycastEnemy.position, endPos, 1 << LayerMask.NameToLayer("Default"));
+        if (hit.collider != null)
+        {
+            val = true;
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Hit Player");
+            }
+        }
+        Debug.DrawLine(eSM.raycastEnemy.position, endPos, Color.red);
+
+        return val;
+    }
+
 }
