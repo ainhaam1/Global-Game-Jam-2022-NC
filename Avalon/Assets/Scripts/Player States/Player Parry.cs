@@ -29,11 +29,13 @@ public class PlayerParry : BaseState
     {
         base.UpdatePhysics();
         mSM.speed = 0;
-        mSM.rb.velocity = Vector2.zero;
 
         if (parry.parrySuccess == true)
         {
-            
+            //play animation
         }
+        isParrying = false;
     }
+
+
 }
