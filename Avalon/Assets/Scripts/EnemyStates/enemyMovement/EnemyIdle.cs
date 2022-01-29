@@ -13,11 +13,8 @@ public class EnemyIdle : BaseState
     public override void Enter()
     {
         base.Enter();
-        eSM.rb.velocity = new Vector2(0,0);
+        stateMachine.changeState(eSM.enemyFollow);
     }
 
-    public override void UpdateLogic()
-    {
-        base.UpdateLogic();
-    }
+   
 }
