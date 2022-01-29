@@ -27,12 +27,20 @@ public class PlayerMove : BaseState
         if (Mathf.Abs(_horizontalInput) < Mathf.Epsilon)
         {
             mSM.rb.velocity = new Vector2(0, 0);
+            mSM.animator.SetFloat("Speed", 0);
             stateMachine.changeState(mSM.idleState);
         }
         
         if (Input.GetMouseButtonDown(0))
         {
+            mSM.animator.SetFloat("Speed", 0);
             stateMachine.changeState(mSM.attackState);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            mSM.animator.SetFloat("Speed", 0);
+            stateMachine.changeState(mSM.parryState);
         }
     }
     public override void UpdatePhysics()
@@ -40,11 +48,13 @@ public class PlayerMove : BaseState
         base.UpdatePhysics();
         if (_horizontalInput < 0)
         {
+            mSM.animator.SetFloat("Speed", 1);
             Vector3 targetVelocityS = new Vector2((_horizontalInput * Time.fixedDeltaTime) * 3f, mSM.rb.velocity.y);
             mSM.rb.velocity = Vector3.SmoothDamp(mSM.rb.velocity, targetVelocityS, ref m_Velocity, MovementSmoothing);
         }
         else
         {
+            mSM.animator.SetFloat("Speed", 1);
             Vector3 targetVelocity = new Vector2((_horizontalInput * Time.fixedDeltaTime) * 7f, mSM.rb.velocity.y);
             mSM.rb.velocity = Vector3.SmoothDamp(mSM.rb.velocity, targetVelocity, ref m_Velocity, MovementSmoothing);
         }

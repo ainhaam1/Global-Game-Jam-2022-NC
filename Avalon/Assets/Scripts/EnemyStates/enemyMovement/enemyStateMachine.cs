@@ -8,18 +8,32 @@ public class enemyStateMachine : StateMachine
     public EnemyIdle enemyIdle;
     [HideInInspector]
     public EnemyFollow enemyFollow;
+    [HideInInspector]
+    public EnemyAttack enemyAttack;
+    [HideInInspector]
+    public EnemyHit enemyHit;
+
+    public SpriteRenderer enemySprite;
+    public enemyCooldown cooldown;
+    public bool active;
+    public float attackCooldown;
+    public float attackTime;
+    public Color enemyColor;
     public Transform player;
     public Transform raycastEnemyStart;
     public Transform raycastEnemyEnd;
-    public bool sawPlayer;
+    public bool canAttack;
     public float agroRange;
     public Rigidbody2D rb;
     public float speed = 4f;
+    public bool isHit;
 
     private void Awake()
     {
         enemyIdle = new EnemyIdle(this);
         enemyFollow = new EnemyFollow(this);
+        enemyAttack = new EnemyAttack(this);
+        enemyHit = new EnemyHit(this);
     }
 
     protected override BaseState getInitialState()

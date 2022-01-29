@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyIdle : BaseState
 {
     private enemyStateMachine eSM;
+    
     public EnemyIdle(enemyStateMachine stateMachine) : base("Enemy Idle", stateMachine)
     {
         eSM = (enemyStateMachine)stateMachine;
@@ -13,7 +14,11 @@ public class EnemyIdle : BaseState
     public override void Enter()
     {
         base.Enter();
-        stateMachine.changeState(eSM.enemyFollow);
+        if (eSM.active)
+        {
+            stateMachine.changeState(eSM.enemyFollow);
+        }
+        
     }
 
    
