@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyMovementSM : StateMachine
+public class enemyStateMachine : StateMachine
 {
     [HideInInspector]
     public EnemyIdle enemyIdle;
+    [HideInInspector]
+    public EnemyFollow enemyFollow;
+    public Transform player;
+    public float agroRange;
     public Rigidbody2D rb;
     public float speed = 4f;
 
     private void Awake()
     {
         enemyIdle = new EnemyIdle(this);
+        enemyFollow = new EnemyFollow(this);
     }
 
     protected override BaseState getInitialState()
