@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyFollow : BaseState
 {
     private enemyStateMachine eSM;
+    private bool tooFarToPlayer;
+    private bool tooCloseToPlayer;
     public EnemyFollow(enemyStateMachine stateMachine) : base("Enemy Follow", stateMachine)
     {
         eSM = (enemyStateMachine)stateMachine;
@@ -19,36 +21,80 @@ public class EnemyFollow : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        if (canSeePlayer(eSM.agroRange))
+        if (!tooFar(eSM.agroRange / 4))
         {
-            Debug.Log("Can see Method is working");
+            tooFarToPlayer = true;
+        }else if (tooClose(eSM.agroRange/4))
+        {
+            tooCloseToPlayer = true;
         }
+
     }
 
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
+        if (tooFarToPlayer)
+        {
+            getInAttackRange();
+        }else if (tooCloseToPlayer)
+        {
+            backUp();
+        }
+
         
     }
-    bool canSeePlayer(float dist)
+    bool tooFar(float dist)
     {
         bool val = false;
         var castDist = dist;
 
-        Vector2 endPos = eSM.raycastEnemy.position + Vector3.left * dist;
+        Vector2 endPos = eSM.raycastEnemyStart.position + Vector3.left * dist;
 
-        RaycastHit2D hit = Physics2D.Linecast(eSM.raycastEnemy.position, endPos, 1 << LayerMask.NameToLayer("Default"));
+        RaycastHit2D hit = Physics2D.Linecast(eSM.raycastEnemyStart.position, endPos, 1 << LayerMask.NameToLayer("Default"));
         if (hit.collider != null)
         {
             val = true;
             if (hit.collider.gameObject.CompareTag("Player"))
             {
-                Debug.Log("Hit Player");
+                tooFarToPlayer = false;
+                Debug.Log("Enemy is in attack range");
             }
         }
-        Debug.DrawLine(eSM.raycastEnemy.position, endPos, Color.red);
+        Debug.DrawLine(eSM.raycastEnemyStart.position, endPos, Color.red);
 
         return val;
     }
 
+    bool tooClose(float dist)
+    {
+        bool val = false;
+        var castDist = dist;
+
+        Vector2 endPos = eSM.raycastEnemyEnd.position + Vector3.left * dist;
+
+        RaycastHit2D hit = Physics2D.Linecast(eSM.raycastEnemyEnd.position + new Vector3(eSM.agroRange, 0), endPos, 1 << LayerMask.NameToLayer("Default"));
+        if (hit.collider != null)
+        {
+            val = true;
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                tooCloseToPlayer = true;
+                Debug.Log("Enemy is Too Close");
+            }
+        }
+        Debug.DrawLine(eSM.raycastEnemyEnd.position, endPos, Color.blue);
+
+        return val;
+    }
+
+    void getInAttackRange()
+    {
+        eSM.transform.Translate(Vector3.left * eSM.speed * Time.fixedDeltaTime); 
+    }
+
+    void backUp()
+    {
+        eSM.transform.Translate(Vector3.right * eSM.speed * Time.fixedDeltaTime / 2);
+    }
 }
