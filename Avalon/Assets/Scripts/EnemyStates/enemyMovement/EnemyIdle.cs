@@ -19,5 +19,10 @@ public class EnemyIdle : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        float distToPlayer = Vector2.Distance(eSM.transform.position, eSM.player.position);
+        if (distToPlayer < eSM.agroRange)
+        {
+            stateMachine.changeState(eSM.enemyFollow);
+        }
     }
 }
