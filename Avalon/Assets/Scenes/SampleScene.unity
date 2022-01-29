@@ -416,7 +416,7 @@ MonoBehaviour:
   player: {fileID: 249923707}
   agroRange: 4
   rb: {fileID: 267923651}
-  speed: 5
+  speed: 4
 --- !u!1 &446333583
 GameObject:
   m_ObjectHideFlags: 0
