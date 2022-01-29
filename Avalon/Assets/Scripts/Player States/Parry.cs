@@ -11,13 +11,7 @@ public class Parry : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            parrySuccess = true;
-            //Deal damage to enemy
+            parrySuccess = true;   
         }
-    }
-
-    public IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1);
     }
 }
