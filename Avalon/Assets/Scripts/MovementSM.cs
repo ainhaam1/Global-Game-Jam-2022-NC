@@ -13,8 +13,6 @@ public class MovementSM : StateMachine
     [HideInInspector]
     public PlayerParry parryState;
     public Rigidbody2D rb;
-    public Animator animator;
-    public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float speed = 4f;
