@@ -10,6 +10,8 @@ public class MovementSM : StateMachine
     public PlayerMove movingState;
     [HideInInspector]
     public PlayerAttack attackState;
+    [HideInInspector]
+    public PlayerParry parryState;
     public Rigidbody2D rb;
     public Transform attackPoint;
     public LayerMask enemyLayers;
@@ -20,6 +22,7 @@ public class MovementSM : StateMachine
         idleState = new PlayerIdle(this);
         movingState = new PlayerMove(this);
         attackState = new PlayerAttack(this);
+        parryState = new PlayerParry(this);
     }
     protected override BaseState getInitialState()
     {

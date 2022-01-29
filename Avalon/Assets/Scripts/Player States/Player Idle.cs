@@ -27,5 +27,10 @@ public class PlayerIdle : BaseState
         {
             stateMachine.changeState(mSM.attackState);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.changeState(mSM.parryState);
+        }
     }
 }
