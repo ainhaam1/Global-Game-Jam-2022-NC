@@ -12,6 +12,7 @@ public class MovementSM : StateMachine
     public PlayerAttack attackState;
     public Rigidbody2D rb;
     public Transform attackPoint;
+    public LayerMask enemyLayers;
     public float speed = 4f;
 
     private void Awake()

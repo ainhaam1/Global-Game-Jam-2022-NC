@@ -29,7 +29,7 @@ public class PlayerMove : BaseState
             mSM.rb.velocity = new Vector2(0, 0);
             stateMachine.changeState(mSM.idleState);
         }
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             stateMachine.changeState(mSM.attackState);
@@ -38,8 +38,16 @@ public class PlayerMove : BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        Vector3 targetVelocity = new Vector2((_horizontalInput * Time.fixedDeltaTime) * 10f, mSM.rb.velocity.y);
-        mSM.rb.velocity = Vector3.SmoothDamp(mSM.rb.velocity, targetVelocity, ref m_Velocity, MovementSmoothing);
+        if (_horizontalInput < 0)
+        {
+            Vector3 targetVelocityS = new Vector2((_horizontalInput * Time.fixedDeltaTime) * 3f, mSM.rb.velocity.y);
+            mSM.rb.velocity = Vector3.SmoothDamp(mSM.rb.velocity, targetVelocityS, ref m_Velocity, MovementSmoothing);
+        }
+        else
+        {
+            Vector3 targetVelocity = new Vector2((_horizontalInput * Time.fixedDeltaTime) * 7f, mSM.rb.velocity.y);
+            mSM.rb.velocity = Vector3.SmoothDamp(mSM.rb.velocity, targetVelocity, ref m_Velocity, MovementSmoothing);
+        }
     }
 }
 

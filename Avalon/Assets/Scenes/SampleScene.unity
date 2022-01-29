@@ -270,6 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 249923708}
   attackPoint: {fileID: 309076945}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
   speed: 30
 --- !u!1 &267923647
 GameObject:
