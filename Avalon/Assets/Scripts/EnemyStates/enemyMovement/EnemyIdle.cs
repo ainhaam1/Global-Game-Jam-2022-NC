@@ -13,16 +13,8 @@ public class EnemyIdle : BaseState
     public override void Enter()
     {
         base.Enter();
-        eSM.rb.velocity = new Vector2(0,0);
+        stateMachine.changeState(eSM.enemyFollow);
     }
 
-    public override void UpdateLogic()
-    {
-        base.UpdateLogic();
-        float distToPlayer = Vector2.Distance(eSM.transform.position, eSM.player.position);
-        if (distToPlayer < eSM.agroRange)
-        {
-            stateMachine.changeState(eSM.enemyFollow);
-        }
-    }
+   
 }
