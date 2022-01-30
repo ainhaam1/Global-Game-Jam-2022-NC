@@ -307,6 +307,7 @@ MonoBehaviour:
   isHit: 0
   white: 1
   health: 2
+  blackColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
 --- !u!114 &7263194025030028828
 MonoBehaviour:
   m_ObjectHideFlags: 0

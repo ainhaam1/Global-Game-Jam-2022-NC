@@ -7,7 +7,7 @@ public class CameraTrigger : MonoBehaviour
 {
     public CinemachineVirtualCamera oldCamera;
     public CinemachineVirtualCamera cameraToSwitch;
-    public GameObject enemy;
+    public GameObject[] enemy;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +23,11 @@ public class CameraTrigger : MonoBehaviour
                 CameraSwitcher.Unregister(oldCamera);
             }
 
-            enemy.GetComponent<enemyStateMachine>().active = true;
+            foreach (GameObject enemies in enemy)
+            {
+                enemies.GetComponent<enemyStateMachine>().active = true;
+            }
+            
         }
     }
 }

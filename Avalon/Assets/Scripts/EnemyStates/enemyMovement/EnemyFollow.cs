@@ -20,7 +20,7 @@ public class EnemyFollow : BaseState
         eSM.isHit = false;
         if (!eSM.white)
         {
-            eSM.enemySprite.color = Color.gray;
+            eSM.enemySprite.color = eSM.blackColor;
         }
     }
 

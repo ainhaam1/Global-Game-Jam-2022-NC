@@ -17,7 +17,7 @@ public class EnemyIdle : BaseState
         base.Enter();
         if (!eSM.white)
         {
-            eSM.enemySprite.color = Color.gray;
+            eSM.enemySprite.color = eSM.blackColor;
         }
 
     }

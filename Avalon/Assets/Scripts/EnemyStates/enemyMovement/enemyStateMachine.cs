@@ -34,6 +34,7 @@ public class enemyStateMachine : StateMachine
     public bool isHit;
     public bool white;
     public int health;
+    public Color blackColor;
 
     private void Awake()
     {
