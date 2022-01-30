@@ -47,8 +47,8 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
-    public string returnState()
+    public BaseState returnState()
     {
-        return currentState.name;
+        return currentState;
     }
 }
