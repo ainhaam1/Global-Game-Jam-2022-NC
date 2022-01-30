@@ -49,10 +49,17 @@ public class PlayerHealth : MonoBehaviour
         healthBar.sprite = healthBars[currentIndex];
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         currentEnemy = collision.gameObject.tag;
-        Debug.Log("current enemy: " + currentEnemy);
-        mSM.isHit = true;
+        if (collision.gameObject.CompareTag("PHitCollider"))
+        {
+            Debug.Log("hit");
+            if (collision.gameObject.GetComponentInParent<enemyStateMachine>().canAttack == true)
+            {
+                Debug.Log("hit by enemy");
+                mSM.isHit = true;
+            }
+        }
     }
 }

@@ -48,11 +48,11 @@ public class PlayerAttack : BaseState
         //Detech enemies withini range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(mSM.attackPoint.position, attackRange, mSM.enemyLayers);
         //apply damage
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.gameObject.CompareTag("EnemyHit"))
             {
-                
+
                 if (enemy.GetComponentInParent<enemyStateMachine>())
                 {
                     if (mSM.returnState() == mSM.attackState)
@@ -61,17 +61,11 @@ public class PlayerAttack : BaseState
                         enemy.GetComponentInParent<enemyStateMachine>().isHit = true;
                         enemy.GetComponentInParent<enemyStateMachine>().enemyHit.changed = false;
                     }
-                    
+
                 }
-                
+
             }
-
-
-
         }
         isAttacking = false;
     }
-    
-
-    
 }

@@ -15,7 +15,6 @@ public class EnemyFollow : BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Follow");
         eSM.enemySprite.color = eSM.enemyColor;
         eSM.canAttack = false;
         eSM.isHit = false;
@@ -40,7 +39,6 @@ public class EnemyFollow : BaseState
         }
         if (eSM.isHit)
         {
-            Debug.Log("follow hit");
             eSM.enemyHit.doFlash();
         }
         
@@ -72,7 +70,6 @@ public class EnemyFollow : BaseState
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 tooFarToPlayer = false;
-                //Debug.Log("Enemy is in attack range");
             }
         }
         Debug.DrawLine(eSM.raycastEnemyStart.position, endPos, Color.red);
@@ -94,7 +91,6 @@ public class EnemyFollow : BaseState
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 tooCloseToPlayer = true;
-                //Debug.Log("Enemy is Too Close");
             }
         }
         //Debug.DrawLine(eSM.raycastEnemyEnd.position, endPos, Color.blue);

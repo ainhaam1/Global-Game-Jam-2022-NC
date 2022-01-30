@@ -10,6 +10,7 @@ TagManager:
   - DarkAttackPoint
   - LightAttackPoint
   - EnemyHit
+  - PHitCollider
   layers:
   - Default
   - TransparentFX

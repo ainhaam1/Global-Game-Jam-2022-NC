@@ -30,16 +30,9 @@ public class PlayerHit : BaseState
     {
         base.UpdatePhysics();
         mSM.rb.AddForce(new Vector2(-1, 0) * 3, ForceMode2D.Impulse);
-        if (mSM.pHealth.currentEnemy == "DarkEnemy" || mSM.pHealth.currentEnemy == "DarkEnemy" || mSM.pHealth.currentEnemy == "Enemy")
-        {
-            Debug.Log("took 20 damage");
-            mSM.pHealth.takeDamage(20);
-            mSM.isHit = false;
-        } else
-        {
-            Debug.Log("took 40 damage");
-            mSM.pHealth.takeDamage(40);
-            mSM.isHit = false;
-        }
+
+        Debug.Log("took 20 damage");
+        mSM.pHealth.takeDamage(20);
+        mSM.isHit = false;
     }
 }
