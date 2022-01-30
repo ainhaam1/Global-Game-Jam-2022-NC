@@ -29,6 +29,12 @@ public class PlayerAttack : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
+        if (mSM.isHit)
+        {
+            isAttacking = false;
+            stateMachine.changeState(mSM.hitState);
+        }
+
         if (!isAttacking)
         {
             stateMachine.changeState(mSM.idleState);
