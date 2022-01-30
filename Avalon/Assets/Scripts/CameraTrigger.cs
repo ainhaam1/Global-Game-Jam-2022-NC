@@ -7,6 +7,7 @@ public class CameraTrigger : MonoBehaviour
 {
     public CinemachineVirtualCamera oldCamera;
     public CinemachineVirtualCamera cameraToSwitch;
+    public GameObject enemy;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -49,9 +49,15 @@ public class PlayerMove : BaseState
             stateMachine.changeState(mSM.parryState);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            mSM.animator.SetTrigger("Switch");
+            mSM.animator.SetBool("White", true);
+            mSM.whiteSword = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            mSM.animator.SetBool("White", false);
+            mSM.whiteSword = false;
         }
     }
     public override void UpdatePhysics()

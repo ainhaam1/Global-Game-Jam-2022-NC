@@ -55,11 +55,14 @@ public class PlayerAttack : BaseState
 
                 if (enemy.GetComponentInParent<enemyStateMachine>())
                 {
-                    if (mSM.returnState() == mSM.attackState)
+                    if (mSM.returnState() == mSM.attackState && !mSM.whiteSword == enemy.GetComponentInParent<enemyStateMachine>().white)
                     {
                         Debug.Log("We hit " + enemy.gameObject.CompareTag("EnemyHit"));
                         enemy.GetComponentInParent<enemyStateMachine>().isHit = true;
                         enemy.GetComponentInParent<enemyStateMachine>().enemyHit.changed = false;
+                    } else
+                    {
+                        return;
                     }
 
                 }

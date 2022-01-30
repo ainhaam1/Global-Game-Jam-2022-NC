@@ -41,10 +41,13 @@ public class PlayerIdle : BaseState
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            mSM.animator.SetTrigger("Switch");
-        }else if (Input.GetKeyDown(KeyCode.E))
+            mSM.animator.SetBool("White", true);
+            mSM.whiteSword = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
         {
-            mSM.animator.SetTrigger("Switchback");
+            mSM.animator.SetBool("White", false);
+            mSM.whiteSword = false;
         }
 
     }

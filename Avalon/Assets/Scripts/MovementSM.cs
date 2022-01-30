@@ -27,6 +27,7 @@ public class MovementSM : StateMachine
     public float speed = 4f;
     public bool isHit;
     public bool canAttack = true;
+    public bool whiteSword;
 
     private void Awake()
     {
