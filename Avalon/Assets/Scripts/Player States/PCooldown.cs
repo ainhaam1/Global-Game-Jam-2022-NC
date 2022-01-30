@@ -14,17 +14,10 @@ public class PCooldown : MonoBehaviour
 
     public IEnumerator WaitForAnim()
     {
-        yield return new WaitForSeconds(0.55f);
+        yield return new WaitForSeconds(0.4f);
         mSM.attackPoint.GetComponent<BoxCollider2D>().enabled = false;
         mSM.animator.SetBool("Attack", false);
     }
 
-    public void OnDrawGizmosSelected()
-    {
-        if (mSM.attackPoint == null)
-        {
-            return;
-        }
-        Gizmos.DrawWireSphere(mSM.attackPoint.position, mSM.attackState.attackRange);
-    }
+
 }

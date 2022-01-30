@@ -13,6 +13,7 @@ public class EnemyIdle : BaseState
 
     public override void Enter()
     {
+        eSM.isHit = false;
         base.Enter();
         if (eSM.active)
         {

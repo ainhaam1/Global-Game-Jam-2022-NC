@@ -9,6 +9,7 @@ TagManager:
   - AttackPoint
   - DarkAttackPoint
   - LightAttackPoint
+  - EnemyHit
   layers:
   - Default
   - TransparentFX

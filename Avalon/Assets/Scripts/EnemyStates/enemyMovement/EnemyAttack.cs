@@ -16,17 +16,33 @@ public class EnemyAttack : BaseState
         base.Enter();
         //Debug.Log("Attack");
         eSM.canAttack = true;
-        attack();
+        eSM.isHit = false;
+        
     }
-    void coolDown()
-    {
-        //Wait 3 seconds then go to the attack state
-        eSM.cooldown.Awake();
-    }
+
     void attack()
     {
         //Debug.Log("Enemy Attacked");
-        coolDown();
+        eSM.cooldown.doAttack();
+        //eSM.cooldown.doCooldDown();
+    }
+
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
+        if (Time.time > eSM.cooldown.cdTime)
+        {
+            eSM.cooldown.cdTime = Time.time + eSM.attackCooldown;
+            attack();
+        }
+        else
+        {
+            eSM.cooldown.underCD = true;
+        }
+        if (eSM.cooldown.underCD && eSM.isHit)
+        {
+            eSM.enemyHit.doFlash();
+        }
     }
 
     public override void Exit()

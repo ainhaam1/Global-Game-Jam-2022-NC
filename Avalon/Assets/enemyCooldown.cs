@@ -6,10 +6,19 @@ public class enemyCooldown : MonoBehaviour
 {
 
     public enemyStateMachine enemy;
+    public bool underCD;
+    public float cdTime;
 
-    public void Awake()
+    public void doAttack()
     {
         StartCoroutine(attack(enemy.attackTime));
+    }
+    public void doCooldDown()
+    {
+
+        underCD = true;
+
+        StartCoroutine(coolDown(enemy.attackCooldown));
     }
     private IEnumerator attack(float time)
     {
@@ -17,28 +26,33 @@ public class enemyCooldown : MonoBehaviour
         //enemy.enemySprite.color = Color.red;
         enemy.anim.SetBool("canAttack", true);
         yield return new WaitForSeconds(time);
-        StartCoroutine(coolDown(enemy.attackCooldown));
+        enemy.anim.SetBool("canAttack", false);
+        enemy.changeState(enemy.enemyFollow);
+        //underCD = true;
+        //doCooldDown();
     }
     
     private IEnumerator coolDown(float time)
     {
         //enemy.enemySprite.color = Color.blue;
-        enemy.anim.SetBool("canAttack", false);
+        
         yield return new WaitForSeconds(time);
         
         enemy.canAttack = false;
         if (enemy.isHit)
         {
             Debug.Log("cooldown hit");
-            enemy.changeState(enemy.enemyHit);
         }
         enemy.changeState(enemy.enemyFollow);
     }
 
     public IEnumerator flashHit()
     {
+        enemy.isHit = true;
         enemy.enemySprite.material = enemy.flashMaterial;
+        Debug.Log("Change Material");
         yield return new WaitForSeconds(enemy.flashDuration);
         enemy.enemySprite.material = enemy.orgMaterial;
+        enemy.isHit = false;
     }
 }

@@ -10,16 +10,15 @@ public class enemyStateMachine : StateMachine
     public EnemyFollow enemyFollow;
     [HideInInspector]
     public EnemyAttack enemyAttack;
-    [HideInInspector]
-    public EnemyHit enemyHit;
 
     public Material flashMaterial;
     public float flashDuration;
     public Material orgMaterial;
-
+    public GameObject hitCollider;
+    public bool isInCooldown;
     public SpriteRenderer enemySprite;
     public enemyCooldown cooldown;
-    public Hit hit;
+    public enemyIsHit enemyHit;
     public bool active;
     public float attackCooldown;
     public float attackTime;
@@ -39,7 +38,6 @@ public class enemyStateMachine : StateMachine
         enemyIdle = new EnemyIdle(this);
         enemyFollow = new EnemyFollow(this);
         enemyAttack = new EnemyAttack(this);
-        enemyHit = new EnemyHit(this);
     }
 
     protected override BaseState getInitialState()
