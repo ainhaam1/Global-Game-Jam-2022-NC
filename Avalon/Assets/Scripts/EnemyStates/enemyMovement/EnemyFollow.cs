@@ -18,6 +18,7 @@ public class EnemyFollow : BaseState
         //Debug.Log("Follow");
         eSM.enemySprite.color = eSM.enemyColor;
         eSM.canAttack = false;
+        eSM.isHit = false;
     }
 
     public override void UpdateLogic()
