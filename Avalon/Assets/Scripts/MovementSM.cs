@@ -12,12 +12,15 @@ public class MovementSM : StateMachine
     public PlayerAttack attackState;
     [HideInInspector]
     public PlayerParry parryState;
+
+    public PCooldown pCooldown;
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float speed = 4f;
+    public bool canAttack;
 
     private void Awake()
     {

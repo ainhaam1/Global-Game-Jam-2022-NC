@@ -6,14 +6,13 @@ public class PlayerIdle : BaseState
 {
     private MovementSM mSM;
     private float _horizontalInput;
-    private bool canAttack;
     public PlayerIdle(MovementSM stateMachine) : base("Player Idle", stateMachine) { mSM = (MovementSM)stateMachine; }
 
     public override void Enter()
     {
         base.Enter();
         _horizontalInput = 0f;
-        canAttack = true;
+        mSM.canAttack = true;
     }
 
     public override void UpdateLogic()
@@ -25,9 +24,13 @@ public class PlayerIdle : BaseState
             stateMachine.changeState(((MovementSM) stateMachine).movingState);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && mSM.canAttack == true)
         {
             stateMachine.changeState(mSM.attackState);
+            mSM.canAttack = false;
+            Debug.Log("before:" + mSM.canAttack);
+            mSM.pCooldown.StartCoroutine(mSM.pCooldown.Wait());
+            Debug.Log("after:" + mSM.canAttack);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
