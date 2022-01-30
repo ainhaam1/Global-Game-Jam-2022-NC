@@ -39,5 +39,6 @@ public class PlayerAttack : BaseState
             Debug.Log("We hit " + enemy.name);
         }
         isAttacking = false;
+        
     }
 }

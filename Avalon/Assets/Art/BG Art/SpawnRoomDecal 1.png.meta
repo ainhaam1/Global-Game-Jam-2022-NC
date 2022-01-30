@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 1fe2f6281887c804fa3ca77410ed1778
+guid: b67fed503601467499564ac05d8486b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7224679386350405493
-    second: SoulTorch_0
+      213: 3559451159088661153
+    second: SpawnRoomDecal 1_0
   - first:
-      213: 2052532390182226304
-    second: SoulTorch_1
+      213: -8097621401432635822
+    second: SpawnRoomDecal 1_1
+  - first:
+      213: -6270566465818484350
+    second: SpawnRoomDecal 1_2
+  - first:
+      213: -3601946003283827018
+    second: SpawnRoomDecal 1_3
+  - first:
+      213: -1759608831413321769
+    second: SpawnRoomDecal 1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SoulTorch_0
+      name: SpawnRoomDecal 1_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 64
-        width: 38
-        height: 48
+        x: 0
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +120,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b883f784068ccbb90800000000000000
-      internalID: -7224679386350405493
+      spriteID: 1a205dc68f5b56130800000000000000
+      internalID: 3559451159088661153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SoulTorch_1
+      name: SpawnRoomDecal 1_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 38
-        height: 48
+        x: 512
+        y: 512
+        width: 512
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +141,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0898bc6855f0c7c10800000000000000
-      internalID: 2052532390182226304
+      spriteID: 256c10a0d387f9f80800000000000000
+      internalID: -8097621401432635822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpawnRoomDecal 1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 512
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281a960b5097af8a0800000000000000
+      internalID: -6270566465818484350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpawnRoomDecal 1_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 512
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b62126a131530ec0800000000000000
+      internalID: -3601946003283827018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpawnRoomDecal 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dff7f3371d9497e0800000000000000
+      internalID: -1759608831413321769
       vertices: []
       indices: 
       edges: []

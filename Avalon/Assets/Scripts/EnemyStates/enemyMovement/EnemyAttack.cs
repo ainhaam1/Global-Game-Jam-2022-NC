@@ -14,7 +14,7 @@ public class EnemyAttack : BaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
         eSM.canAttack = true;
         attack();
     }
