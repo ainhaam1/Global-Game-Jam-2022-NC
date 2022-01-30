@@ -28,6 +28,7 @@ public class MovementSM : StateMachine
     public bool isHit;
     public bool canAttack = true;
     public bool whiteSword;
+    public Transform respawnPos;
 
     private void Awake()
     {

@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            mSM.transform.position = mSM.respawnPos.position;
         }
     }
 
