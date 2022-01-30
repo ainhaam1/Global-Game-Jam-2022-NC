@@ -13,6 +13,10 @@ public class enemyStateMachine : StateMachine
     [HideInInspector]
     public EnemyHit enemyHit;
 
+    public Material flashMaterial;
+    public float flashDuration;
+    public Material orgMaterial;
+
     public SpriteRenderer enemySprite;
     public enemyCooldown cooldown;
     public Hit hit;

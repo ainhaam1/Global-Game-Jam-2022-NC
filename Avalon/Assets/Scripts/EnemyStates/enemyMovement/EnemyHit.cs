@@ -15,8 +15,9 @@ public class EnemyHit : BaseState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("Enemy Hit");
         eSM.isHit = true;
-        knockBack();
+        flash();
         eSM.isHit = false;
     }
 
@@ -29,21 +30,26 @@ public class EnemyHit : BaseState
         }
     }
 
-    void knockBack()
+    void flash()
     {
-        eSM.hit.StartCoroutine(eSM.hit.WaitForHit());
-        Debug.Log("force here");
-        //canHit = true;
-        if (canHit)
-        {
-            Debug.Log("in force");
-
-            Vector2 newDir = new Vector2(1, 0);
-            Color oldC = eSM.enemyColor; 
-            eSM.enemyColor = new Color(255, 255, 255);
-            eSM.rb.AddForce(newDir * 3, ForceMode2D.Impulse);
-            eSM.enemyColor = oldC;
-            canHit = false;
-        }
+        eSM.cooldown.flashHit();
     }
+
+    //void knockBack()
+    //{
+    //    eSM.hit.StartCoroutine(eSM.hit.WaitForHit());
+    //    Debug.Log("force here");
+    //    //canHit = true;
+    //    if (canHit)
+    //    {
+    //        Debug.Log("in force");
+
+    //        Vector2 newDir = new Vector2(1, 0);
+    //        Color oldC = eSM.enemyColor; 
+    //        eSM.enemyColor = new Color(255, 255, 255);
+    //        eSM.rb.AddForce(newDir * 3, ForceMode2D.Impulse);
+    //        eSM.enemyColor = oldC;
+    //        canHit = false;
+    //    }
+    //}
 }

@@ -34,4 +34,14 @@ public class enemyCooldown : MonoBehaviour
         }
         enemy.changeState(enemy.enemyFollow);
     }
+
+    public IEnumerator flashHit()
+    {
+        enemy.enemySprite.material = enemy.flashMaterial;
+        yield return new WaitForSeconds(enemy.flashDuration);
+        enemy.enemySprite.material = enemy.orgMaterial;
+
+
+
+    }
 }
