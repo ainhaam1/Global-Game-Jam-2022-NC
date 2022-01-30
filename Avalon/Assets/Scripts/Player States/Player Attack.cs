@@ -22,6 +22,7 @@ public class PlayerAttack : BaseState
 
     public override void Exit()
     {
+        //mSM.attackPoint.GetComponent<BoxCollider2D>().enabled = false;
         mSM.pCooldown.StartCoroutine(mSM.pCooldown.WaitForAnim());
         base.Exit();
     }
@@ -49,12 +50,28 @@ public class PlayerAttack : BaseState
         //apply damage
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
+            if (enemy.gameObject.CompareTag("EnemyHit"))
+            {
+                
+                if (enemy.GetComponentInParent<enemyStateMachine>())
+                {
+                    if (mSM.returnState() == mSM.attackState)
+                    {
+                        Debug.Log("We hit " + enemy.gameObject.CompareTag("EnemyHit"));
+                        enemy.GetComponentInParent<enemyStateMachine>().isHit = true;
+                        enemy.GetComponentInParent<enemyStateMachine>().enemyHit.changed = false;
+                    }
+                    
+                }
+                
+            }
 
-            
+
+
         }
         isAttacking = false;
     }
+    
 
     
 }

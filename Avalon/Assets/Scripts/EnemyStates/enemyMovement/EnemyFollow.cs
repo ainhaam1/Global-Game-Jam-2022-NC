@@ -15,7 +15,7 @@ public class EnemyFollow : BaseState
     public override void Enter()
     {
         base.Enter();
-        //Debug.Log("Follow");
+        Debug.Log("Follow");
         eSM.enemySprite.color = eSM.enemyColor;
         eSM.canAttack = false;
         eSM.isHit = false;
@@ -41,9 +41,9 @@ public class EnemyFollow : BaseState
         if (eSM.isHit)
         {
             Debug.Log("follow hit");
-            tooFarToPlayer = true;
-            stateMachine.changeState(eSM.enemyHit);
+            eSM.enemyHit.doFlash();
         }
+        
     }
 
     public override void UpdatePhysics()
