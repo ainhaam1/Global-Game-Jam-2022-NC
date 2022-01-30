@@ -32,6 +32,7 @@ public class EnemyHit : BaseState
     {
         Debug.Log("knocked back");
         Vector2 newDir = new Vector2(1, 0);
-        eSM.rb.AddForce(newDir, ForceMode2D.Impulse);
+        eSM.rb.AddForce(newDir * 3, ForceMode2D.Impulse);
+        //other.gameObject.GetComponent<Rigidbody>().AddForce(player.transform.forward * 10, ForceMode.Impulse)
     }
 }

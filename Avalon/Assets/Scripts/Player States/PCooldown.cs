@@ -15,6 +15,7 @@ public class PCooldown : MonoBehaviour
     public IEnumerator WaitForAnim()
     {
         yield return new WaitForSeconds(0.55f);
+        mSM.attackPoint.GetComponent<BoxCollider2D>().enabled = false;
         mSM.animator.SetBool("Attack", false);
     }
 }

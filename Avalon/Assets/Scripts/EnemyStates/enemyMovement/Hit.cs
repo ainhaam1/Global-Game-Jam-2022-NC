@@ -11,11 +11,9 @@ public class Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "AttackPoint")
         {
-            if (mSM.returnState().Equals("Player Attack"))
-            {
-                Debug.Log("hit true");
+                Debug.Log("hit true 2");
                 eSM.isHit = true;
-            }
+            
         }
     }
 }

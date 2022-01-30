@@ -17,6 +17,7 @@ public class PlayerAttack : BaseState
         base.Enter();
         isAttacking = true;
         mSM.animator.SetBool("Attack", true);
+        mSM.attackPoint.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public override void Exit()
