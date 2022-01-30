@@ -29,9 +29,9 @@ public class PlayerHit : BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        mSM.rb.AddForce(new Vector2(-1, 0) * 3, ForceMode2D.Impulse);
+        
 
-        Debug.Log("took 20 damage");
+        
         mSM.pHealth.takeDamage(20);
         mSM.isHit = false;
     }

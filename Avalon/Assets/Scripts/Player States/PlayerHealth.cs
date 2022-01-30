@@ -55,11 +55,13 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyAttack"))
         {
             Debug.Log("hit");
-            mSM.isHit = true;
+            
             if (collision.gameObject.GetComponentInParent<enemyStateMachine>().canAttack == true)
             {
                 Debug.Log("hit by enemy");
+                Debug.Log("took 20 damage");
                 mSM.isHit = true;
+               
             }
         }
     }
