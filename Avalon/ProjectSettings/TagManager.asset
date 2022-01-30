@@ -46,6 +46,9 @@ TagManager:
   - name: Background
     uniqueID: 2708252411
     locked: 0
+  - name: Runes
+    uniqueID: 2980254003
+    locked: 0
   - name: Foreground
     uniqueID: 1602191711
     locked: 0
