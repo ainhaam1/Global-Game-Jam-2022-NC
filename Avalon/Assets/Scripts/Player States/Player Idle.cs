@@ -39,9 +39,13 @@ public class PlayerIdle : BaseState
             stateMachine.changeState(mSM.parryState);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             mSM.animator.SetTrigger("Switch");
+        }else if (Input.GetKeyDown(KeyCode.E))
+        {
+            mSM.animator.SetTrigger("Switchback");
         }
+
     }
 }
