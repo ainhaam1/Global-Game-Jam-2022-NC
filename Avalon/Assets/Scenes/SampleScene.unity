@@ -433,7 +433,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309076944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -903,6 +903,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.86345124, y: 0.93955755}
   m_EdgeRadius: 0
+--- !u!114 &598739547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7263194025030028830, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
+  m_PrefabInstance: {fileID: 7263194025142763225}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598739538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9aca528d2e5114894a1de514a190eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920794429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1874,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7263194025030028829, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 598739547}
     - target: {fileID: 7263194025030028829, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
       propertyPath: player
       value: 

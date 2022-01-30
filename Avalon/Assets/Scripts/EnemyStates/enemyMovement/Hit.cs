@@ -11,9 +11,13 @@ public class Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "AttackPoint")
         {
-                Debug.Log("hit true 2");
                 eSM.isHit = true;
-            
         }
+    }
+
+    public IEnumerator WaitForHit()
+    {
+        yield return new WaitForSeconds(0.3f);
+        eSM.enemyHit.canHit = true;
     }
 }

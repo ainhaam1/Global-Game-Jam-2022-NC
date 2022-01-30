@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHit : BaseState
 {
     private enemyStateMachine eSM;
+    public bool canHit;
 
     public EnemyHit(enemyStateMachine stateMachine) : base("Enemy Hit", stateMachine)
     {
@@ -30,9 +31,13 @@ public class EnemyHit : BaseState
 
     void knockBack()
     {
-        Debug.Log("knocked back");
-        Vector2 newDir = new Vector2(1, 0);
-        eSM.rb.AddForce(newDir * 3, ForceMode2D.Impulse);
-        //other.gameObject.GetComponent<Rigidbody>().AddForce(player.transform.forward * 10, ForceMode.Impulse)
+        eSM.hit.StartCoroutine(eSM.hit.WaitForHit());
+        if (canHit)
+        {
+            Debug.Log("force here");
+            Vector2 newDir = new Vector2(1, 0);
+            eSM.rb.AddForce(newDir * 3, ForceMode2D.Impulse);
+        }
+        canHit = false;
     }
 }

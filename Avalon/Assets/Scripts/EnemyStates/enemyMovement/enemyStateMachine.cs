@@ -15,6 +15,7 @@ public class enemyStateMachine : StateMachine
 
     public SpriteRenderer enemySprite;
     public enemyCooldown cooldown;
+    public Hit hit;
     public bool active;
     public float attackCooldown;
     public float attackTime;
