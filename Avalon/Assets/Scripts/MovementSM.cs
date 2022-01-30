@@ -15,6 +15,7 @@ public class MovementSM : StateMachine
     [HideInInspector]
     public PlayerHit hitState;
 
+
     public PCooldown pCooldown;
     public PlayerHealth pHealth;
     public Rigidbody2D rb;
@@ -22,6 +23,7 @@ public class MovementSM : StateMachine
     public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public enemyStateMachine eSM;
     public float speed = 4f;
     public bool isHit;
     public bool canAttack = true;

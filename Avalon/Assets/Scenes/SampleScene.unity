@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pCooldown: {fileID: 249923713}
+  pHealth: {fileID: 0}
   rb: {fileID: 249923708}
   animator: {fileID: 249923712}
   spriteRenderer: {fileID: 249923706}
@@ -774,7 +775,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  eSM: {fileID: 0}
   speed: 30
+  isHit: 0
   canAttack: 0
 --- !u!114 &249923711
 MonoBehaviour:
@@ -865,7 +868,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10666145, y: 0.117846064}
+  m_Offset: {x: 0.16360298, y: -0.09270529}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -876,7 +879,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.197906, y: 0.23921905}
+  m_Size: {x: 0.20055455, y: 0.6603217}
   m_EdgeRadius: 0
 --- !u!1001 &372805547
 PrefabInstance:
@@ -3565,11 +3568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7263194024093092861, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: -0.301
       objectReference: {fileID: 0}
     - target: {fileID: 7263194024551949507, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.155
+      value: 0.204
       objectReference: {fileID: 0}
     - target: {fileID: 7263194025030028824, guid: 69810b2158164974b99f5a3340ba6f53, type: 3}
       propertyPath: m_RootOrder

@@ -40,8 +40,5 @@ public class enemyCooldown : MonoBehaviour
         enemy.enemySprite.material = enemy.flashMaterial;
         yield return new WaitForSeconds(enemy.flashDuration);
         enemy.enemySprite.material = enemy.orgMaterial;
-
-
-
     }
 }

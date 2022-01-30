@@ -50,7 +50,12 @@ public class PlayerAttack : BaseState
         foreach(Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
+            mSM.eSM = enemy.GetComponent<enemyStateMachine>();
+            //enemy.GetComponent<enemyStateMachine>().isHit = true;
+            
         }
         isAttacking = false;
     }
+
+    
 }
