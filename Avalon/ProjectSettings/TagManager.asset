@@ -11,6 +11,7 @@ TagManager:
   - LightAttackPoint
   - EnemyHit
   - PHitCollider
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

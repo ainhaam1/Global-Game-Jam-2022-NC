@@ -52,9 +52,10 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         currentEnemy = collision.gameObject.tag;
-        if (collision.gameObject.CompareTag("PHitCollider"))
+        if (collision.gameObject.CompareTag("EnemyAttack"))
         {
             Debug.Log("hit");
+            mSM.isHit = true;
             if (collision.gameObject.GetComponentInParent<enemyStateMachine>().canAttack == true)
             {
                 Debug.Log("hit by enemy");
