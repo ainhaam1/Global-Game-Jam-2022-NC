@@ -24,6 +24,10 @@ public class PlayerMove : BaseState
     {
         base.UpdateLogic();
         _horizontalInput = Input.GetAxisRaw("Horizontal") * mSM.speed;
+        if (mSM.isHit)
+        {
+            stateMachine.changeState(mSM.hitState);
+        }
         if (Mathf.Abs(_horizontalInput) < Mathf.Epsilon)
         {
             mSM.rb.velocity = new Vector2(0, 0);

@@ -18,6 +18,10 @@ public class PlayerIdle : BaseState
     {
         base.UpdateLogic();
         _horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (mSM.isHit)
+        {
+            stateMachine.changeState(mSM.hitState);
+        }
         if (Mathf.Abs(_horizontalInput) > Mathf.Epsilon)
         {
             stateMachine.changeState(((MovementSM) stateMachine).movingState);

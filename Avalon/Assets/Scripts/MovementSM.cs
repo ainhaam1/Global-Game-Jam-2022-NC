@@ -12,14 +12,18 @@ public class MovementSM : StateMachine
     public PlayerAttack attackState;
     [HideInInspector]
     public PlayerParry parryState;
+    [HideInInspector]
+    public PlayerHit hitState;
 
     public PCooldown pCooldown;
+    public PlayerHealth pHealth;
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float speed = 4f;
+    public bool isHit;
     public bool canAttack = true;
 
     private void Awake()
@@ -28,6 +32,7 @@ public class MovementSM : StateMachine
         movingState = new PlayerMove(this);
         attackState = new PlayerAttack(this);
         parryState = new PlayerParry(this);
+        hitState = new PlayerHit(this);
         canAttack = true;
     }
     protected override BaseState getInitialState()
