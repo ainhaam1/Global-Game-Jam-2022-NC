@@ -18,6 +18,7 @@ public class PlayerMove : BaseState
     {
         base.Enter();
         _horizontalInput = 0f;
+        mSM.canAttack = true;
     }
 
     public override void UpdateLogic()
@@ -31,10 +32,12 @@ public class PlayerMove : BaseState
             stateMachine.changeState(mSM.idleState);
         }
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && mSM.canAttack == true)
         {
             mSM.animator.SetFloat("Speed", 0);
             stateMachine.changeState(mSM.attackState);
+            mSM.canAttack = false;
+            mSM.pCooldown.StartCoroutine(mSM.pCooldown.Wait());
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
