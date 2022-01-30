@@ -18,6 +18,10 @@ public class EnemyFollow : BaseState
         eSM.enemySprite.color = eSM.enemyColor;
         eSM.canAttack = false;
         eSM.isHit = false;
+        if (!eSM.white)
+        {
+            eSM.enemySprite.color = Color.gray;
+        }
     }
 
     public override void UpdateLogic()
@@ -41,7 +45,11 @@ public class EnemyFollow : BaseState
         {
             eSM.enemyHit.doFlash();
         }
-        
+        if (eSM.health == 0)
+        {
+            eSM.cooldown.destroyEnemy();
+        }
+
     }
 
     public override void UpdatePhysics()

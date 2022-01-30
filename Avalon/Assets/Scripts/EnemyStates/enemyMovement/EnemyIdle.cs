@@ -15,12 +15,24 @@ public class EnemyIdle : BaseState
     {
         eSM.isHit = false;
         base.Enter();
+        if (!eSM.white)
+        {
+            eSM.enemySprite.color = Color.gray;
+        }
+
+    }
+    public override void UpdateLogic()
+    {
+        base.UpdateLogic();
         if (eSM.active)
         {
             stateMachine.changeState(eSM.enemyFollow);
         }
-        
+        if (eSM.health == 0)
+        {
+            eSM.cooldown.destroyEnemy();
+        }
     }
 
-   
+
 }

@@ -33,6 +33,7 @@ public class enemyStateMachine : StateMachine
     public float speed = 4f;
     public bool isHit;
     public bool white;
+    public int health;
 
     private void Awake()
     {

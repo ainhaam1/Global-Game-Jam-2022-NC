@@ -22,6 +22,8 @@ public class CameraTrigger : MonoBehaviour
                 CameraSwitcher.SwitchCamera(cameraToSwitch);
                 CameraSwitcher.Unregister(oldCamera);
             }
+
+            enemy.GetComponent<enemyStateMachine>().active = true;
         }
     }
 }

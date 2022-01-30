@@ -20,6 +20,10 @@ public class enemyCooldown : MonoBehaviour
 
         StartCoroutine(coolDown(enemy.attackCooldown));
     }
+    public void destroyEnemy()
+    {
+        Destroy(enemy.gameObject);
+    }
     private IEnumerator attack(float time)
     {
         //Debug.Log("attack state turned red");

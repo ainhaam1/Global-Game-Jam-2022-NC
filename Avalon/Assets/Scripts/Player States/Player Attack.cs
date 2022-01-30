@@ -60,6 +60,8 @@ public class PlayerAttack : BaseState
                         Debug.Log("We hit " + enemy.gameObject.CompareTag("EnemyHit"));
                         enemy.GetComponentInParent<enemyStateMachine>().isHit = true;
                         enemy.GetComponentInParent<enemyStateMachine>().enemyHit.changed = false;
+                        enemy.GetComponentInParent<enemyStateMachine>().health -= 1;
+
                     } else
                     {
                         return;
