@@ -14,15 +14,18 @@ public class enemyCooldown : MonoBehaviour
     private IEnumerator attack(float time)
     {
         //Debug.Log("attack state turned red");
-        enemy.enemySprite.color = Color.red;
+        //enemy.enemySprite.color = Color.red;
+        enemy.anim.SetBool("canAttack", true);
         yield return new WaitForSeconds(time);
         StartCoroutine(coolDown(enemy.attackCooldown));
     }
     
     private IEnumerator coolDown(float time)
     {
-        enemy.enemySprite.color = Color.blue;
+        //enemy.enemySprite.color = Color.blue;
+        enemy.anim.SetBool("canAttack", false);
         yield return new WaitForSeconds(time);
+        
         enemy.canAttack = false;
         if (enemy.isHit)
         {

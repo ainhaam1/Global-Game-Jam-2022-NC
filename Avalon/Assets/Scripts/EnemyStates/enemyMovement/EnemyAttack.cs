@@ -26,7 +26,6 @@ public class EnemyAttack : BaseState
     void attack()
     {
         //Debug.Log("Enemy Attacked");
-        eSM.enemySprite.color = Color.red;
         coolDown();
     }
 

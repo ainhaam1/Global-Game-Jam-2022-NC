@@ -25,6 +25,7 @@ public class enemyStateMachine : StateMachine
     public bool canAttack;
     public float agroRange;
     public Rigidbody2D rb;
+    public Animator anim;
     public float speed = 4f;
     public bool isHit;
 
