@@ -6,12 +6,14 @@ public class PlayerIdle : BaseState
 {
     private MovementSM mSM;
     private float _horizontalInput;
+    private bool canAttack;
     public PlayerIdle(MovementSM stateMachine) : base("Player Idle", stateMachine) { mSM = (MovementSM)stateMachine; }
 
     public override void Enter()
     {
         base.Enter();
         _horizontalInput = 0f;
+        canAttack = true;
     }
 
     public override void UpdateLogic()
