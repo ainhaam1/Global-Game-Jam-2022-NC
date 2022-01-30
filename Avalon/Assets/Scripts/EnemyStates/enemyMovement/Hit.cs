@@ -7,14 +7,15 @@ public class Hit : MonoBehaviour
     public MovementSM mSM;
     public enemyStateMachine eSM;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "AttackPoint")
         {
-            //if (mSM.isAttacking)
-            //{
-            //    eSM.isHit = true;
-            //}
+            if (mSM.returnState().Equals("Player Attack"))
+            {
+                Debug.Log("hit true");
+                eSM.isHit = true;
+            }
         }
     }
 }

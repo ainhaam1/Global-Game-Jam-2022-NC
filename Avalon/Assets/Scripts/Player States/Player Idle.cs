@@ -27,9 +27,7 @@ public class PlayerIdle : BaseState
         {
             stateMachine.changeState(mSM.attackState);
             mSM.canAttack = false;
-            Debug.Log("before:" + mSM.canAttack);
             mSM.pCooldown.StartCoroutine(mSM.pCooldown.Wait());
-            Debug.Log("after:" + mSM.canAttack);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerAttack : BaseState
 {
     private MovementSM mSM;
-    private bool isAttacking;
-    private float attackRange = 0.5f;
+    public bool isAttacking;
+    private float attackRange = 1f;
 
     public PlayerAttack(MovementSM stateMachine) : base("Player Attack", stateMachine)
     {
@@ -16,6 +16,13 @@ public class PlayerAttack : BaseState
     {
         base.Enter();
         isAttacking = true;
+        mSM.animator.SetBool("Attack", true);
+    }
+
+    public override void Exit()
+    {
+        mSM.pCooldown.StartCoroutine(mSM.pCooldown.WaitForAnim());
+        base.Exit();
     }
 
     public override void UpdateLogic()
@@ -30,7 +37,6 @@ public class PlayerAttack : BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        //Play attack animation
         //Detech enemies withini range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(mSM.attackPoint.position, attackRange, mSM.enemyLayers);
         //apply damage
