@@ -8,7 +8,8 @@ public class PCooldown : MonoBehaviour
     // Start is called before the first frame update
     public IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1f);
+        Debug.Log("cooldown");
+        yield return new WaitForSeconds(2f);
         mSM.canAttack = true;
     }
 }

@@ -12,7 +12,6 @@ public class PlayerIdle : BaseState
     {
         base.Enter();
         _horizontalInput = 0f;
-        mSM.canAttack = true;
     }
 
     public override void UpdateLogic()

@@ -20,7 +20,7 @@ public class MovementSM : StateMachine
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float speed = 4f;
-    public bool canAttack;
+    public bool canAttack = true;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class MovementSM : StateMachine
         movingState = new PlayerMove(this);
         attackState = new PlayerAttack(this);
         parryState = new PlayerParry(this);
+        canAttack = true;
     }
     protected override BaseState getInitialState()
     {
