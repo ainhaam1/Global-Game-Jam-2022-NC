@@ -17,7 +17,7 @@ public class Hit : MonoBehaviour
 
     public IEnumerator WaitForHit()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1.2f);
         eSM.enemyHit.canHit = true;
     }
 }

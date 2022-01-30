@@ -29,6 +29,7 @@ public class enemyCooldown : MonoBehaviour
         enemy.canAttack = false;
         if (enemy.isHit)
         {
+            Debug.Log("cooldown hit");
             enemy.changeState(enemy.enemyHit);
         }
         enemy.changeState(enemy.enemyFollow);

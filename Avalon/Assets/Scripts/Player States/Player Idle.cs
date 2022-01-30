@@ -34,5 +34,10 @@ public class PlayerIdle : BaseState
         {
             stateMachine.changeState(mSM.parryState);
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            mSM.animator.SetTrigger("Switch");
+        }
     }
 }

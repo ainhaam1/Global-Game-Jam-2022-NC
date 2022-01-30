@@ -44,6 +44,11 @@ public class PlayerMove : BaseState
             mSM.animator.SetFloat("Speed", 0);
             stateMachine.changeState(mSM.parryState);
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            mSM.animator.SetTrigger("Switch");
+        }
     }
     public override void UpdatePhysics()
     {

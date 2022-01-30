@@ -6,7 +6,7 @@ public class PlayerAttack : BaseState
 {
     private MovementSM mSM;
     public bool isAttacking;
-    private float attackRange = 1f;
+    public float attackRange = 1f;
 
     public PlayerAttack(MovementSM stateMachine) : base("Player Attack", stateMachine)
     {

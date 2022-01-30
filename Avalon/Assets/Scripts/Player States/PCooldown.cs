@@ -18,4 +18,13 @@ public class PCooldown : MonoBehaviour
         mSM.attackPoint.GetComponent<BoxCollider2D>().enabled = false;
         mSM.animator.SetBool("Attack", false);
     }
+
+    public void OnDrawGizmosSelected()
+    {
+        if (mSM.attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(mSM.attackPoint.position, mSM.attackState.attackRange);
+    }
 }

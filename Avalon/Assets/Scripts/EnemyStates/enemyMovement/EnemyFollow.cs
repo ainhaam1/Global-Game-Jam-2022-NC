@@ -39,6 +39,7 @@ public class EnemyFollow : BaseState
         }
         if (eSM.isHit)
         {
+            Debug.Log("follow hit");
             tooFarToPlayer = true;
             stateMachine.changeState(eSM.enemyHit);
         }
