@@ -333,7 +333,8 @@ EdgeCollider2D:
   - {x: -6.138823, y: -2.6028376}
   - {x: 5.03535, y: -2.6454449}
   - {x: 7.1815395, y: -3.8005347}
-  - {x: 7.9146466, y: -3.9272475}
+  - {x: 7.745713, y: -4.0929265}
+  - {x: 8.040342, y: -4.264989}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -4786,6 +4787,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -8.104748
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: -3.9529026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: -4.869688
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: -3.748037
+      objectReference: {fileID: 0}
     - target: {fileID: 4547456397246911732, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
       propertyPath: m_Name
       value: Hallway3
@@ -6181,6 +6198,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -8.168991
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: -4.0638757
+      objectReference: {fileID: 0}
     - target: {fileID: 4507444145988743754, guid: c564371f6df54364baa6aba6da0963b5, type: 3}
       propertyPath: m_Points.Array.data[11].x
       value: 8.0599575
