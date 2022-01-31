@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2fb42d82b581dd4fb4aa92dd5db07c7
+guid: f8e532c8ae446ed48bf9da3b3e084eaf
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 6624529810214927672
     second: EnemyAttack_3
+  - first:
+      213: -532907774716112662
+    second: EnemyAttack 1_0
+  - first:
+      213: 6452384578189972922
+    second: EnemyAttack 1_1
+  - first:
+      213: -5381049745313798010
+    second: EnemyAttack 1_2
+  - first:
+      213: -2039859877755856642
+    second: EnemyAttack 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,85 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyAttack_0
+      name: EnemyAttack 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.484917, y: 0.1807441}
+        x: 16
+        y: 76
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccc918c438c42fa00800000000000000
-      internalID: 788777011551247564
+      spriteID: ae0900ec33bba98f0800000000000000
+      internalID: -532907774716112662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttack_1
+      name: EnemyAttack 1_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.484917, y: 0.1807441}
+        x: 82
+        y: 76
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89c22fb879369af50800000000000000
-      internalID: 6893150207206370456
+      spriteID: ab5d83176997b8950800000000000000
+      internalID: 6452384578189972922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttack_2
+      name: EnemyAttack 1_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.484917, y: 0.1807441}
+        x: 20
+        y: 12
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cecd34c241ed5daa0800000000000000
-      internalID: -6136754738999075604
+      spriteID: 6886dd344cba255b0800000000000000
+      internalID: -5381049745313798010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttack_3
+      name: EnemyAttack 1_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.484917, y: 0.1807441}
+        x: 74
+        y: 10
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83db8dd93ce0feb50800000000000000
-      internalID: 6624529810214927672
+      spriteID: ef85ac2bf36f0b3e0800000000000000
+      internalID: -2039859877755856642
       vertices: []
       indices: 
       edges: []

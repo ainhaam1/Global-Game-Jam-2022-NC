@@ -33,6 +33,7 @@ public class PlayerCombat : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(0.9f, .1f);
         foreach (Collider2D enemy in hitEnemies)
         {
+            //enemy.GetComponentInChildren<Enemy>().takeDamage(attackDamage);
             enemy.GetComponent<Enemy>().takeDamage(attackDamage);
         }
     }

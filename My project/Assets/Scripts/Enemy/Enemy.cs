@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
 
     private bool isAttacking;
-    private int currentHealth;
+    public int currentHealth;
     void Start()
     {
         currentHealth = maxHealth;

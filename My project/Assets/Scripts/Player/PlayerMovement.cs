@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (isJump)
         {
             Debug.Log("here");
-            rb.AddForce(new Vector2(0f, jumpForce));
+            rb.AddForce(new Vector2(0f, jumpForce) );
         }
         isJump = false;
 
