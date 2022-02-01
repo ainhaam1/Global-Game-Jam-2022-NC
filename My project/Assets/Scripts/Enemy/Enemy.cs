@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        FindObjectOfType<HitStop>().Stop(0.07f);
+        FindObjectOfType<HitStop>().Stop(0.1f);
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
         if (currentHealth <= 0)

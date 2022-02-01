@@ -35,6 +35,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjs);
+        if (!isGround)
+        {
+            Debug.Log("here");
+            Physics2D.gravity.Scale(new Vector2(1.2f, 1.2f));
+        } else
+        {
+            Physics2D.gravity.Scale(new Vector2(1f, 1f));
+        }
         Move();
     }
 
@@ -55,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (isJump)
         {
             Debug.Log("here");
-            rb.AddForce(new Vector2(0f, jumpForce) );
+            rb.AddForce(new Vector2(0f, jumpForce));
         }
         isJump = false;
 
