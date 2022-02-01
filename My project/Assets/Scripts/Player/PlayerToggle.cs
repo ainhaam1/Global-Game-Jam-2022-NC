@@ -14,7 +14,7 @@ public class PlayerToggle : MonoBehaviour
 
     public void ToggleSword()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
             if (isLight)
             {

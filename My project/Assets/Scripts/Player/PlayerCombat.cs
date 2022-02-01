@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public float attackRate = 0.2f;
     public int attackDamage = 40;
+    public float knockbackPower = 200f;
 
     private float nextAttackTime = 0f;
 
@@ -33,10 +34,11 @@ public class PlayerCombat : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(0.9f, .1f);
         foreach (Collider2D enemy in hitEnemies)
         {
-            //enemy.GetComponentInChildren<Enemy>().takeDamage(attackDamage);
+            
             if (enemy.GetComponent<Enemy>())
             {
                 enemy.GetComponent<Enemy>().takeDamage(attackDamage);
+                enemy.GetComponent<Enemy>().takeKnockback(enemy.transform.parent.gameObject, -knockbackPower);
             } 
         }
     }
